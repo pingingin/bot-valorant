@@ -1,5 +1,5 @@
 from discord.ext import commands
-from songs import songAPI
+# from songs import songAPI
 
 import os
 import discord
@@ -13,7 +13,7 @@ from utils.cache import *
 load_dotenv()
 token = os.getenv('TOKEN')
 
-songsInstance = songAPI()
+# songsInstance = songAPI()
 discord.http.API_VERSION = 9
 
 # bot = commands.Bot(command_prefix = '!', help_command = None, case_insensitive = True)
