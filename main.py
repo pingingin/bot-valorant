@@ -1,24 +1,18 @@
-from discord.ext import commands
-# from songs import songAPI
-
+# Standard
 import os
 import discord
 from dotenv import load_dotenv
 from discord.ext import commands, tasks
 
+load_dotenv()
+
+# Local
 from utils.json_loader import *
 from utils.cache import *
 
-
-load_dotenv()
-token = os.getenv('TOKEN')
-
-# songsInstance = songAPI()
 discord.http.API_VERSION = 9
 
-# bot = commands.Bot(command_prefix = '!', help_command = None, case_insensitive = True)
 bot = commands.Bot(case_insensitive = True)
-
 bot.format_version = 1
 
 @bot.event
@@ -78,42 +72,6 @@ async def on_message(message):
             data["embed_design"] = 'Giorgio#0609'
             config_save(data)
             return await message.reply('`changed to embed split(Giorgio#0609)`')
-
-
-# @bot.command()
-# async def help(ctx):
-#     await songsInstance.help(ctx)
-
-# @bot.command() 
-# async def play(ctx,* ,search: str):
-#     await songsInstance.play(ctx, search)
-
-# @bot.command()
-# async def stop(ctx):
-#     await songsInstance.stop(ctx)
-
-# @bot.command()
-# async def pause(ctx):
-#     await songsInstance.pause(ctx)
-
-# @bot.command()
-# async def resume(ctx):
-#     await songsInstance.resume(ctx)
-
-# @bot.command()
-# async def leave(ctx):
-#     await songsInstance.leave(ctx)
-
-# @bot.command()
-# async def queueList(ctx):
-#     await songsInstance.queueList(ctx)
-
-# @bot.command()
-# async def skip(ctx):
-#     await songsInstance.skip(ctx)
-
-
-# bot.run(token)
 
 if __name__ == "__main__":
 
